@@ -1,8 +1,6 @@
-import * as actions from './actions';
-import middleware from './middlewares';
+import * as actions from '../lib/actions';
 import { connect } from 'redux-vue';
 import { bindActionCreators } from 'redux';
-import router from './router';
 
 const Route = {
   name: 'Route',
@@ -24,7 +22,6 @@ const Route = {
   },
   mounted() {
     this.routerActions.register(this.path, this.component, (ctx, next) => {
-      console.log(ctx);
       this.routerActions.changed(ctx);
       next();
     });
