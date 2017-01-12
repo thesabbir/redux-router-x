@@ -1,13 +1,27 @@
 {
-  "name": "redux-vue-router",
-  "version": "1.0.0",
-  "description": "",
+  "name": "redux-router-x",
+  "version": "0.1.0",
+  "description": "universal routing for redux",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/thesabbir/redux-router-x.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thesabbir/redux-router-x/issues"
+  },
+  "homepage": "https://github.com/thesabbir/redux-router-x#readme",
+  "keywords": [
+    "redux",
+    "router",
+    "react",
+    "vue"
+  ],
+  "author": "Sabbir Ahmed",
+  "license": "MIT",
   "dependencies": {
     "page.js": "^4.13.3"
   }
