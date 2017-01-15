@@ -1,4 +1,4 @@
-import * as actions from '../lib/actions';
+import { actionCreators } from '../lib';
 import { connect } from 'redux-vue';
 import { bindActionCreators } from 'redux';
 
@@ -39,6 +39,6 @@ export default connect((state, props) => ({
   router: state.router
 }), (dispatch, props) => ({
   routerActions: bindActionCreators({
-    ...actions
+    ...actionCreators
   }, dispatch)
 }))(Route);
