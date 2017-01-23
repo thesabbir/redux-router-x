@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/thesabbir/redux-router-x.git"
   },
@@ -23,6 +23,7 @@
   "author": "Sabbir Ahmed",
   "license": "MIT",
   "dependencies": {
-    "page.js": "^4.13.3"
+    "page.js": "^4.13.3",
+    "redux-thunk": "^2.2.0"
   }
 }
