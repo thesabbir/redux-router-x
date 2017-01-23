@@ -25,7 +25,7 @@ const RouteV = {
     });
   },
   render(h) {
-    if (this.router.ready) {
+    if (this.router.ready && this.rend) {
       return h(this.rend.component)
     }
   }
