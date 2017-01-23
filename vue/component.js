@@ -21,8 +21,7 @@ const RouteV = {
   },
   mounted() {
     this.routerActions.register(this.routes, (ctx, next) => {
-      this.routerActions.changed(ctx);
-      next();
+      this.routerActions.routeChanged(ctx);
     });
   },
   render(h) {
