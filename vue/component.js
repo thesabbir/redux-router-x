@@ -1,16 +1,12 @@
 import { actionCreators } from '../lib';
-import { connect } from 'redux-vue';
+import { connect } from 'vua-redux';
 import { bindActionCreators } from 'redux';
 
-const Route = {
-  name: 'Route',
+const RouteV = {
+  name: 'RouteV',
   props: {
-    component: {
+    routes: {
       type: Object,
-      required: true
-    },
-    path: {
-      type: String,
       required: true
     },
     routerActions: {
@@ -18,27 +14,29 @@ const Route = {
     },
     router: {
       type: Object
+    },
+    rend: {
+      type: Object
     }
   },
   mounted() {
-    this.routerActions.register(this.path, this.component, (ctx, next) => {
+    this.routerActions.register(this.routes, (ctx, next) => {
       this.routerActions.changed(ctx);
       next();
     });
   },
   render(h) {
-    if (this.router.path === this.path) {
-      return h(this.component);
+    if (this.router.ready) {
+      return h(this.rend.component)
     }
-    return null;
   }
-
 };
 
 export default connect((state, props) => ({
-  router: state.router
+  router: state.router,
+  rend: state.router.routes[state.router.path]
 }), (dispatch, props) => ({
   routerActions: bindActionCreators({
     ...actionCreators
   }, dispatch)
-}))(Route);
+}))(RouteV);
